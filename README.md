@@ -7,12 +7,10 @@ Ce projet a pour but l'installation et la gestion de capteurs ***Libelium ©*** 
 
 ## Prérequis
 
-La programmation des capteur nécessite l’environnement [***Libelium ©***](http://www.libelium.com/development/waspmote/sdk_applications/).
-Cet IDE permet de télé-transférer le code executable dans le Waspmote à condition que celui-ci soit allumé (via les deux interupteur à coté du connecteur mini-USB) et connecté.
-L'IDE ne dispose pas d'***intellisence*** , par conséquent il faudra se référer à la [documentation](http://www.libelium.com/api/waspmote/html/) ainsi qu'aux divers exemples fournis dans l'IDE.
+* La programmation des capteur nécessite l’environnement [***Libelium ©***](http://www.libelium.com/development/waspmote/sdk_applications/).
+* Cet IDE permet de télé-transférer le code executable dans le Waspmote à condition que celui-ci soit allumé (via les deux interupteur à coté du connecteur mini-USB) et connecté.
+* L'IDE ne dispose pas d'***intellisence*** , par conséquent il faudra se référer à la [documentation](http://www.libelium.com/api/waspmote/html/) ainsi qu'aux divers exemples fournis dans l'IDE.
 
 ## Notes
 
-Cerains buggs natifs à la librairie (tout du moins à sa version actuelle) ralentissent considérablement le débuguage, parmi ces problèmes on peut noter :
-
-* L'impossibilité d'afficher correctement quoi que ce soit via le moniteur sériel USB (valable pour Windows, à tester pour Linux & Mac OS).
+* Pour permettre le débuguage USB, il faut accorder le débit USB **- le baud -** à 115'725
