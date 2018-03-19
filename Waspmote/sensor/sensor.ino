@@ -26,7 +26,7 @@ const float THRESHOLD_L = 0.5;
 // GENERIC FORMULA: humidity(% RH) = (volts * 100 / 3)
 const float THRESHOLD_H = 1.5;
 
-// Variable to store the temperature read value
+// Variable to store the temperature, humidity and light
 float temperature, humidity, light;
 
 /**
@@ -37,7 +37,15 @@ float temperature, humidity, light;
  */
 const char* ftoa(float flt) { static char float_buffer[10]; return dtostrf(flt, 1, 4, float_buffer); }
 
-inline float voltToLux(float ohms) { float factor = 1e5f; return (1 / ohms) * factor; }		// Only works for linear LDR
+/**
+ * @brief Convert resistance from LDR to lux.
+ * 
+ * /!\ Only works for linear LDR.
+ * 
+ * @param ohms risistance in ohms.
+ * @return float Luminosity in lux.
+ */
+inline float voltToLux(float ohms) { float factor = 1e5f; return (1 / ohms) * factor; }
 
 void setup()
 {

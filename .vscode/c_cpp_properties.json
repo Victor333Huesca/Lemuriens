@@ -8,6 +8,8 @@
                 "D:/Users/Victor/Documents/Arduino/hardware/waspmote/avr/cores/waspmote-api",
                 "D:/Users/Victor/Documents/Arduino/libraries/SensorEvent_v20",
                 "D:/Users/Victor/Documents/Arduino/libraries/SensorCities",
+                "D:/Users/Victor/Documents/Arduino/libraries/_3G",
+                "D:/Users/Victor/Documents/Arduino/libraries",
                 "${workspaceRoot}/Waspmote"
             ],
             "defines": [
@@ -24,6 +26,8 @@
                     "D:/Users/Victor/Documents/Arduino/hardware/waspmote/avr/cores/waspmote-api",
                     "D:/Users/Victor/Documents/Arduino/libraries/SensorEvent_v20",
                     "D:/Users/Victor/Documents/Arduino/libraries/SensorCities",
+                    "D:/Users/Victor/Documents/Arduino/libraries/_3G",
+                    "D:/Users/Victor/Documents/Arduino/libraries",
                     "${workspaceRoot}/Waspmote"
                 ],
                 "limitSymbolsToIncludedHeaders": false,

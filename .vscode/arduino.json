@@ -1,6 +1,6 @@
 {
     "board": "waspmote:avr:wasp1",
-    "port": "COM6",
-    "sketch": "Waspmote\\sensor\\sensor.ino",
+    "port": "COM4",
+    "sketch": "Waspmote\\sms\\sms.ino",
     "output": "Waspmote/build"
 }
