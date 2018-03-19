@@ -1,0 +1,162 @@
+% Some colors
+\definecolor{barblue}{RGB}{153,204,254}
+\definecolor{groupblue}{RGB}{51,102,254}
+\definecolor{linkred}{RGB}{165,0,33}
+
+% Some commands
+%\renewcommand\sfdefault{phv}
+%\renewcommand\mddefault{mc}
+%\renewcommand\bfdefault{bc}
+
+\setganttlinklabel{s-s}{START-TO-START}
+\setganttlinklabel{f-s}{FINISH-TO-START}
+\setganttlinklabel{f-f}{FINISH-TO-FINISH}
+
+% Start
+\sffamily
+\begin{ganttchart}[% Formating
+        x unit=0.4cm,
+        canvas/.append style={fill=none, draw=black!5, line width=.50pt},
+        hgrid style/.style={draw=black, line width=.75pt},
+        vgrid={*1{draw=black!5, line width=.50pt}},
+        title/.style={draw=none, fill=none},
+        title label font=\bfseries\footnotesize,
+        title label node/.append style={below=7pt},
+        include title in canvas=false,
+        bar label font=\mdseries\footnotesize\color{black!70},
+        bar label node/.append style={left=.5cm},
+        bar/.append style={draw=none, fill=black!70},
+        bar incomplete/.append style={fill=barblue},
+        bar progress label font=\mdseries\tiny\color{black!70}, 
+        group incomplete/.append style={fill=groupblue},
+        group peaks tip position=0,
+        group label node/.append style={left=.2cm},
+        group label font=\bfseries\small\color{black!90},
+        group progress label font=\bfseries\scriptsize,
+        %bar progress label node/.append style={below=-15pt},
+        %group progress label node/.append style={below=-15pt},
+        progress label text={#1\%},
+        link/.style={-latex, line width=1.5pt, linkred},
+        link label font=\scriptsize\bfseries,
+        link label node/.append style={below left=-2pt and 0pt}
+    ]{38}{73}
+    
+    %%%%%%%%%%%%%
+    %%% Title %%%
+    %%%%%%%%%%%%%
+    % Title 1
+    %\gantttitle{Réseau de capteurs et lémuriens}{12} \\ 
+    % Title 2
+    \gantttitle{2017}{14}
+    \gantttitle{2018}{22} \\
+    % Title 3
+    \gantttitlelist{38,...,52}{1}
+    \gantttitlelist{1,...,21}{1} \\
+
+    %%%%%%%%%%%%%%%
+    %%% Rodolph %%%
+    %%%%%%%%%%%%%%%
+    \ganttgroup[
+        progress=85,
+        name=decouverte
+    ]{Découverte}{38}{50} \\
+    
+    \ganttbar[
+        progress=90,
+        name=wasp
+    ]{Waspmotes}{38}{46} \\
+    
+    \ganttbar[
+        progress=60,
+        name=capt
+    ]{Capteurs}{45}{48} \\
+    
+    \ganttbar[
+        progress=35,
+        name=tests
+    ]{Divers tests}{47}{50} \\
+    
+    
+    %%%%%%%%%%%%%%%%%
+    %%% Rapport ? %%%
+    %%%%%%%%%%%%%%%%%
+    \ganttgroup[progress=75]{Rédaction}{55}{58} \\
+    
+    \ganttbar[
+        progress=100,
+        name=rapport
+    ]{Rapport n°1}{56}{57} \\
+
+    \ganttbar[
+        progress=0,
+        name=pres
+    ]{Présentation n°1}{58}{58} \\
+    
+    
+    %%%%%%%%%%%%%%%%%%%%
+    %%% 2nd semestre %%%
+    %%%%%%%%%%%%%%%%%%%%
+    \ganttgroup[progress=0]{Installation}{59}{71} \\
+    
+    \ganttbar[
+        progress=0,
+        name=prog
+    ]{Programmation}{59}{65} \\
+    
+    \ganttbar[
+        progress=0,
+        name=depl
+    ]{Déploiement}{66}{70} \\
+    
+    \ganttbar[
+        progress=0,
+        name=site
+    ]{Site web}{62}{70} \\
+    
+    \ganttbar[
+        progress=0,
+        name=liaison
+    ]{Liaison}{60}{63} \\
+    
+    %%%%%%%%%%%%%%%%%
+    %%% Rapport ! %%%
+    %%%%%%%%%%%%%%%%%
+    \ganttgroup[progress=25]{Rédaction}{71}{72} \\
+
+    \ganttbar[
+        progress=0,
+        name=presf
+    ]{Présentation finale}{72}{72} \\
+%                                   .-"""-.
+%                                  '       \
+%                                 |,.  ,-.  |
+%                                 |()L( ()| |
+%                                 |,'  `".| |
+%                                 |.___.',| `
+%                                .j `--"' `  `.
+%                               / '        '   \
+%                              / / ___      `   `.
+%                             / /   | | | \/ `    .
+%                            / /    | |_| /\  l   |
+%                           . .               |   |
+%                           ,"`.             .|   |
+%                        _.'   ``.   o     | `..-'l
+%                       |       `.`,        |      `.
+%                       |         `.    __.j         )
+%                       |__        |--""___|      ,-'
+%                          `"--...,+""""   `._,.-'
+    \ganttbar[
+        progress=50,
+        name=rapportf
+    ]{Rapport final}{71}{72} \\
+    
+    
+    
+    %%%%%%%%%%%%%%%%%%%
+    %%% Dépendances %%%
+    %%%%%%%%%%%%%%%%%%%
+    \ganttlink[link type=f-s]{prog}{depl}
+    \ganttlink[link type=f-f]{depl}{site}
+    \ganttlink[link type=f-f]{wasp}{capt}
+
+\end{ganttchart}

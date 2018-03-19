@@ -1,0 +1,35 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "D:/Users/Victor/Documents/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.2/include",
+                "D:/Users/Victor/Documents/Arduino/hardware/tools/avr/avr/include",
+                "D:/Users/Victor/Documents/Arduino/hardware/waspmote/avr/cores/waspmote-api",
+                "D:/Users/Victor/Documents/Arduino/libraries/SensorEvent_v20",
+                "D:/Users/Victor/Documents/Arduino/libraries/SensorCities",
+                "${workspaceRoot}/Waspmote"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "VSCODE"
+            ],
+            "intelliSenseMode": "msvc-x64",
+            "browse": {
+                "path": [
+                    "D:/Users/Victor/Documents/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.2/include",
+                    "D:/Users/Victor/Documents/Arduino/hardware/tools/avr/avr/include",
+                    "D:/Users/Victor/Documents/Arduino/hardware/waspmote/avr/cores/waspmote-api",
+                    "D:/Users/Victor/Documents/Arduino/libraries/SensorEvent_v20",
+                    "D:/Users/Victor/Documents/Arduino/libraries/SensorCities",
+                    "${workspaceRoot}/Waspmote"
+                ],
+                "limitSymbolsToIncludedHeaders": false,
+                "databaseFilename": ""
+            }
+        }
+    ],
+    "version": 3
+}

@@ -1,0 +1,46 @@
+% Charge les paramètres
+\input{settings.tex}
+
+% Début du document
+\begin{document}
+
+% Inclue la page de garde
+\input{chapitres/00-page-de-garde.tex}
+
+% Remerciements
+\pagenumbering{gobble}
+\input{chapitres/01-remerciements.tex}
+%%%%%%%%%%%%%%%%%%%%%
+%%% Préliminaires %%%
+%%%%%%%%%%%%%%%%%%%%%
+\frontmatter
+\tableofcontents
+\pagenumbering{gobble}
+\thispagestyle{empty}
+%\listoffigures
+
+
+
+%%%%%%%%%%%%%%%
+%%% Contenu %%%
+%%%%%%%%%%%%%%%
+
+\mainmatter
+\pagenumbering{arabic}
+\pagestyle{fancy}
+
+
+%\cleardoublepage
+
+\input{chapitres/02-introduction.tex}
+\input{chapitres/03-etat-de-lart.tex}
+\input{chapitres/04-environement.tex}
+\input{chapitres/05-deploiement.tex}
+\input{chapitres/06-conclusion.tex}
+
+\appendix
+
+\bibliographystyle{biblio-style}
+\bibliography{references}
+
+\end{document}

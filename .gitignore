@@ -34,3 +34,7 @@
 # Windows files
 Thumbs.db
 *.desktop
+
+# Build folder
+Waspmote/build
+Rapports/Mi_Projet/build
