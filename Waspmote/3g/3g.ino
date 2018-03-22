@@ -28,8 +28,6 @@ void setup()
 	USB.ON();
 	USB.println(F("USB port started..."));
 
-	USB.printf("Going to send the following message to : %s\n\"%s\"\n", phone_number, text_message);
-
 	// 1. activates the 3G module:
 	answer = _3G.ON();
 	if ((answer == 1) || (answer == -3))
@@ -64,15 +62,16 @@ void setup()
 				// Error
 				USB.println(F("Error setting SMS mode"));
 			}
-			answer = _3G.sendSMS(text_message, phone_number);
+
+			answer = _3G.sendHTTPframe(srv_url, srv_port, srv_data, (int)sizeof(srv_data), (uint8_t)POST);
 			if ( answer == 1) 
 			{
 				USB.println(F("SMS Sent OK"));
-				_3G.sendHTTPframe(srv_url, srv_port, srv_data, (int)sizeof(srv_data), (uint8_t)POST);
+				
 			}
 			else if (answer == 0)
 			{
-				USB.println(F("Error sending sms"));
+				USB.println(F("No connection"));
 			}
 			else
 			{
