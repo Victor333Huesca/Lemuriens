@@ -33,6 +33,35 @@
                 "limitSymbolsToIncludedHeaders": false,
                 "databaseFilename": ""
             }
+        },
+        {
+            "name": "Linux",
+            "includePath": [
+                "~/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.2/include",
+                "~/Arduino/hardware/tools/avr/avr/include",
+                "~/Arduino/hardware/waspmote/avr/cores/waspmote-api",
+                "~/Arduino/libraries/SensorEvent_v20",
+                "~/Arduino/libraries/SensorCities",
+                "~/Arduino/libraries/_3G",
+                "~/Arduino/libraries",
+                "${workspaceRoot}/Waspmote"
+            ],
+            "defines": [],
+            "intelliSenseMode": "clang-x64",
+            "browse": {
+                "path": [
+                    "D:/Users/Victor/Documents/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.2/include",
+                    "D:/Users/Victor/Documents/Arduino/hardware/tools/avr/avr/include",
+                    "D:/Users/Victor/Documents/Arduino/hardware/waspmote/avr/cores/waspmote-api",
+                    "D:/Users/Victor/Documents/Arduino/libraries/SensorEvent_v20",
+                    "D:/Users/Victor/Documents/Arduino/libraries/SensorCities",
+                    "D:/Users/Victor/Documents/Arduino/libraries/_3G",
+                    "D:/Users/Victor/Documents/Arduino/libraries",
+                    "${workspaceRoot}/Waspmote"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            }
         }
     ],
     "version": 3
