@@ -12,7 +12,7 @@
 	<h1>Bienvenue sur le site des lémuriens !</h1>
 	<p>Les lémuriens sont actuellement en cours de préparation du site. Par conséquent nous vous prions de bien vouloir attendre quelques temps afin de leur laisser le temps de contruire le site (car c'est lourd les briques pour ces pauvres pitites bêtes).'</p>
 	<form action="index.php" method=POST>
-		<input type='text' name='test'>
+		<input type='text' name='varA'>
 		<input type='submit' name='valider'>
 	</form>
 	<?php
