@@ -20,7 +20,7 @@ const char *pin_code = "1234";
 
 const char *srv_url = "https://lemuriens.proj.info-ufr.univ-montp2.fr/";
 const uint16_t srv_port = 80;
-const uint8_t *srv_data = "varA=1";
+const uint8_t *srv_data = (const uint8_t*)"varA=1";
 
 void setup()
 {
@@ -63,7 +63,7 @@ void setup()
 				USB.println(F("Error setting SMS mode"));
 			}
 
-			answer = _3G.sendHTTPframe(srv_url, srv_port, srv_data, (int)sizeof(srv_data), (uint8_t)POST);
+			//answer = _3G.sendHTTPframe(srv_url, srv_port, srv_data, (int)sizeof(srv_data), (uint8_t)POST);
 			if ( answer == 1) 
 			{
 				USB.println(F("SMS Sent OK"));

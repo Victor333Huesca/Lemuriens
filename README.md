@@ -14,3 +14,5 @@ Ce projet a pour but l'installation et la gestion de capteurs ***Libelium ©*** 
 ## Notes
 
 * Pour permettre le débuguage USB, il faut accorder le débit USB **- le baud -** à 115'725
+* Aucun des modules 3G / GPRS ne fonctionne avec une carte SIM du FAI Sosh. Le FAI Free fonctionne en revanche.
+* Une des batteries est disfonctionnelle.
