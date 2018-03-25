@@ -18,6 +18,11 @@
 	<?php
 		if (isset($_POST['varA'])) {
 			echo $_POST['varA'];
+			if (file_put_contents('varA.log', $_POST['varA'], FILE_APPEND)) {
+				// Données enregistrées
+			} else {
+				// Error
+			}
 		}
 	?>
 </body>

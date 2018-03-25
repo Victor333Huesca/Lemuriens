@@ -1,6 +1,6 @@
 {
     "board": "waspmote:avr:wasp1",
     "port": "/dev/ttyUSB0",
-    "sketch": "Waspmote/sms/sms.ino",
+    "sketch": "Waspmote/3g/3g.ino",
     "output": "Waspmote/build"
 }
