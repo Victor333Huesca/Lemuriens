@@ -6,7 +6,7 @@
 /*@class parserJson
  *@biref class parserJson, transforme les donnée(s) en format json
  */ 
-class parserJson
+class ParserJson
 {
     private $fileOut;
     private $objects;
