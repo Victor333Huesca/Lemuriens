@@ -40,6 +40,12 @@ class Server
         $b = true;
         $h = 0;
         while($b){
+            if($h == 24){ //minuit on vide le fichier
+                unset($this->parser);
+                $this->parser = new ParserJson();
+                $this->parser->setObjects("salle1", "salle2", "salle3", "salle4", "salle5");
+                $h=0;
+            }
             $this->actualClient = socket_accept($this->socket) or die("Erreur socket_accept\n");            
             $day = currentDay();
             $hour = currentHour();
@@ -58,11 +64,7 @@ class Server
             }
             $this->parser->parser();
             $h++;
-            if($h == 24){ //minuit on vide le fichier
-                unset($this->parser);
-                $this->parser = new ParserJson();
-                $this->parser->setObjects("salle1", "salle2", "salle3", "salle4", "salle5");
-            }
+            
         }
         socket_close($this->socket);
         socket_close($this->actualClient);
