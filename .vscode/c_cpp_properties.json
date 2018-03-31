@@ -8,7 +8,9 @@
                 "D:/Users/Victor/Documents/Arduino/hardware/waspmote/avr/cores/waspmote-api",
                 "D:/Users/Victor/Documents/Arduino/libraries/SensorEvent_v20",
                 "D:/Users/Victor/Documents/Arduino/libraries/SensorCities",
+                "D:/Users/Victor/Documents/Arduino/libraries/Frame",
                 "D:/Users/Victor/Documents/Arduino/libraries/_3G",
+                "D:/Users/Victor/Documents/Arduino/libraries/WIFI",
                 "D:/Users/Victor/Documents/Arduino/libraries",
                 "${workspaceRoot}/Waspmote"
             ],
@@ -26,7 +28,9 @@
                     "D:/Users/Victor/Documents/Arduino/hardware/waspmote/avr/cores/waspmote-api",
                     "D:/Users/Victor/Documents/Arduino/libraries/SensorEvent_v20",
                     "D:/Users/Victor/Documents/Arduino/libraries/SensorCities",
+                    "D:/Users/Victor/Documents/Arduino/libraries/Frame",
                     "D:/Users/Victor/Documents/Arduino/libraries/_3G",
+                    "D:/Users/Victor/Documents/Arduino/libraries/WIFI",
                     "D:/Users/Victor/Documents/Arduino/libraries",
                     "${workspaceRoot}/Waspmote"
                 ],
@@ -42,11 +46,15 @@
                 "~/Arduino/hardware/waspmote/avr/cores/waspmote-api",
                 "~/Arduino/libraries/SensorEvent_v20",
                 "~/Arduino/libraries/SensorCities",
+                "~/Arduino/libraries/Frame",
                 "~/Arduino/libraries/_3G",
+                "~/Arduino/libraries/WIFI",
                 "~/Arduino/libraries",
                 "${workspaceRoot}/Waspmote"
             ],
-            "defines": [],
+            "defines": [
+                "VSCODE"
+            ],
             "intelliSenseMode": "clang-x64",
             "browse": {
                 "path": [
@@ -55,13 +63,18 @@
                     "~/Arduino/hardware/waspmote/avr/cores/waspmote-api",
                     "~/Arduino/libraries/SensorEvent_v20",
                     "~/Arduino/libraries/SensorCities",
+                    "~/Arduino/libraries/Frame",
                     "~/Arduino/libraries/_3G",
+                    "~/Arduino/libraries/WIFI",
                     "~/Arduino/libraries",
                     "${workspaceRoot}/Waspmote"
                 ],
                 "limitSymbolsToIncludedHeaders": false,
                 "databaseFilename": ""
-            }
+            },
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
         }
     ],
     "version": 3

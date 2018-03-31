@@ -18,7 +18,7 @@ Wasp3G _3G;
 int8_t answer;
 const char *text_message = "Connaisez-vous les lemuriens ?";
 const char *pin_code = "1234";
-const char *phone_number = "6xxxxxxxx";	// Only the 9 digits
+const char *phone_number = "671763169";	// Only the 9 digits
 
 void setup()
 {
@@ -51,17 +51,8 @@ void setup()
 		if (answer == 1)
 		{ 
 			USB.println(F("3G module connected to the network..."));
+			
 			// 4. sends an SMS
-			if (_3G.setTextModeSMS())
-			{
-				// Success
-				USB.println(F("SMS mode successfully set up"));
-			}
-			else
-			{
-				// Error
-				USB.println(F("Error setting SMS mode"));
-			}
 			answer = _3G.sendSMS(text_message, phone_number);
 			if ( answer == 1) 
 			{
