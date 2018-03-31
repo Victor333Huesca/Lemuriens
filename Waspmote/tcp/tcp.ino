@@ -17,7 +17,7 @@ Wasp3G _3G;
 #endif
 
 
-char test_string[] = "Test string from Waspmote!\r\n";
+char test_string[] = "Ceci est un test !\r\n";
 
 char apn[] = "free";
 const char *pin = "1234";

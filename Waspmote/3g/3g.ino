@@ -18,15 +18,19 @@ Wasp3G _3G;
 
 
 int8_t answer;
+
+///////////////////////////////////////////////////////////////////////////////
+/// Mettre ici tout ce qui a trait a configuration de la SIM et du site web ///
+///////////////////////////////////////////////////////////////////////////////
 const char *pin_code = "1234";
 const char *sim_apn = "free";
 
-// const char *srv_url = "https://lemuriens.proj.info-ufr.univ-montp2.fr";
-const char *srv_url = "drive.matteodelabre.me";
-const char *srv_page = "index.php/login";
+const char *srv_url = "https://lemuriens.proj.info-ufr.univ-montp2.fr";
+const char *srv_page = "index.php";
 const char *srv_ip = "162.38.151.137";
 const uint16_t srv_port = 1234;
 const char *srv_data = "varA=Test_des_lemuriens&varB=8";
+///////////////////////////////////////////////////////////////////////////////
 
 void setup()
 {
@@ -62,6 +66,9 @@ void setup()
 
 			_3G.set_APN((char *)sim_apn);
 
+			/////////////////////////////////////////////////////////////////////////////////////////////////////
+			/// Non fonctinnel car semble être indiqué uniquement en vu d^etre d'utilisé avec le missellium ! ///
+			/////////////////////////////////////////////////////////////////////////////////////////////////////
 			/*
 			// 4. sends an HTTP request
 			answer = _3G.sendHTTPframe((const char*) srv_url, (uint16_t) srv_port, (uint8_t*) srv_data, (int) sizeof(srv_data), (uint8_t) POST, (uint8_t) 0);
@@ -87,27 +94,31 @@ void setup()
 
 			// 5. gets URL from the solicited URL
 			USB.println(F("Getting URL with GET method..."));
-			char tmp[512];
-// 			sprintf(tmp, "POST /%s HTTP/1.1\r\n\
-// Host: %s\r\n\
-// Content-Type: application/x-www-form-urlencoded\r\n\
-// Content-Length: %d\r\n\
-// \r\n\
-// %s\r\n", srv_page, srv_url, strlen(srv_data), srv_data);
-			// sprintf(tmp, "POST /%s HTTP/1.1\r\n\Host: %s\r\n\%s", srv_page, srv_url, srv_data);
+			char get[512], post[512];
+			sprintf(post, "\
+POST /%s HTTP/1.1\r\n\
+Host: %s\r\n\
+Content-Type: application/x-www-form-urlencoded\r\n\
+Content-Length: %d\r\n\
+\r\n\
+%s\r\n", srv_page, srv_url, strlen(srv_data), srv_data);
 
-			sprintf(tmp, "\
+			sprintf(get, "\
 GET /%s?%s HTTP/1.1\r\n\
 Host: %s\r\n\
 Connection: close\r\n\
 \r\n\
 ", srv_page, srv_data, srv_url);
 
-
+			////////////////////////////////////////////////////////////////////////////////////
+			/// Changer cette ligne pour get ou post en fonctione de ce que l'on veut tester ///
+			////////////////////////////////////////////////////////////////////////////////////
+			const char *msg = get;
+			////////////////////////////////////////////////////////////////////////////////////
 			USB.println("Sending :");
-			USB.println(tmp);
+			USB.println(msg);
 
-			answer = _3G.readURL(srv_url, srv_port, tmp);
+			answer = _3G.readURL(srv_url, srv_port, msg);
 			if ( answer == 1) 
 			{
 				USB.println(F("HTTP request successfuly sent"));
