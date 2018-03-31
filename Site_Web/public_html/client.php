@@ -2,9 +2,10 @@
 /*@author Rodriguez Julien
  *@brief fichier simulant le client 
  */
-
-$_host    = "127.0.0.1";
+$_hostname = "";
+$_host    = gethostbyname($_hostname);
 $_port    = 1234;
+
 
 /*@function sendTo
  *@param string $host l'adresse du serveur hote
@@ -14,7 +15,7 @@ $_port    = 1234;
  */
 function sendTo($host, $port, $data){
     $socket = socket_create(AF_INET, SOCK_STREAM, 0) or die("Erreur socket_create\n");
-    $result = socket_connect($socket, "127.0.0.1", 1234) or die("Erreur socket_connect\n");  
+    $result = socket_connect($socket, $host, $port) or die("Erreur socket_connect\n");  
     socket_write($socket, $data, strlen($data)) or die("Erreur socket_write\n");
     socket_close($socket);
 }
@@ -31,7 +32,7 @@ function simuleData($time, $n){
             $datas .= strval(rand(5, 25)) . " ";
         } 
         echo $datas . "\n";
-        sendTo("127.0.0.1", 1234, $datas);
+        sendTo($_host, $_port, $datas);
         $datas = "";
         $i = $i + 1;
         sleep($time);
@@ -39,7 +40,7 @@ function simuleData($time, $n){
 }
 
 simuleData(1, 20);
-sendTo("127.0.0.1", 1234, "stop");
+sendTo($_host, $_port, "stop");
 
 
 ?>

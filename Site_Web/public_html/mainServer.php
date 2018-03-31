@@ -1,7 +1,8 @@
 <?php
     include 'server.php';
-
-    $serv = new server("lemuriens.proj.info-ufr.univ-montp2.fr", 80);
+    $hostname = "";
+    $host = gethostbyname($hostname);
+    $serv = new Server("127.0.0.1", 1234);
     $serv->work();
 
 ?>

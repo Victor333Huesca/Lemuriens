@@ -9,7 +9,7 @@
 /*@class server
  *@biref class server, gère les connexions entrantes et la reception de donnée(s) client
  */ 
-class server
+class Server
 {
     private $socket;
     private $actualClient;
@@ -22,7 +22,7 @@ class server
      *@brief construit une instance de la classe serveur
      */
     public function __construct($adress, $port){
-        $this->parser = new parserJson();
+        $this->parser = new ParserJson();
         $this->parser->setObjects("salle1", "salle2", "salle3", "salle4", "salle5");
 
         $this->socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP) or die("Erreur socket_create\n");
@@ -38,7 +38,14 @@ class server
      */
     public function work(){
         $b = true;
+        $h = 0;
         while($b){
+            if($h == 24){ //minuit on vide le fichier
+                unset($this->parser);
+                $this->parser = new ParserJson();
+                $this->parser->setObjects("salle1", "salle2", "salle3", "salle4", "salle5");
+                $h=0;
+            }
             $this->actualClient = socket_accept($this->socket) or die("Erreur socket_accept\n");            
             $day = currentDay();
             $hour = currentHour();
@@ -56,6 +63,8 @@ class server
                 $i++;
             }
             $this->parser->parser();
+            $h++;
+            
         }
         socket_close($this->socket);
         socket_close($this->actualClient);
